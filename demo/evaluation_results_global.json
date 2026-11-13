@@ -1,0 +1,56 @@
+{
+  "strategy": "global_hybrid_explicit_filters",
+  "created_at": "2026-10-21T13:29:40.308953+00:00",
+  "models": {
+    "text": "gpt-5.4-mini",
+    "embedding": "text-embedding-3-small"
+  },
+  "embedding_dimensions": 1536,
+  "searchable_recordings": 9,
+  "observations": 36,
+  "repeats": 1,
+  "metrics": {
+    "vector": {
+      "queries": 9,
+      "recall_at_3": 1.0,
+      "mrr": 0.9375,
+      "mean_latency_ms": 3602,
+      "median_latency_ms": 2154,
+      "no_match_accuracy": 0,
+      "errors": 0,
+      "degraded_requests": 0
+    },
+    "hybrid": {
+      "queries": 9,
+      "recall_at_3": 0.875,
+      "mrr": 0.75,
+      "mean_latency_ms": 1901,
+      "median_latency_ms": 1739,
+      "no_match_accuracy": 0,
+      "errors": 0,
+      "degraded_requests": 0
+    },
+    "hybrid_reranked": {
+      "queries": 9,
+      "recall_at_3": 1.0,
+      "mrr": 1.0,
+      "mean_latency_ms": 3930,
+      "median_latency_ms": 3395,
+      "no_match_accuracy": 1,
+      "errors": 0,
+      "degraded_requests": 0
+    },
+    "keyword": {
+      "queries": 9,
+      "recall_at_3": 0.875,
+      "mrr": 0.75,
+      "mean_latency_ms": 1724,
+      "median_latency_ms": 1418,
+      "no_match_accuracy": 0,
+      "errors": 0,
+      "degraded_requests": 0
+    }
+  },
+  "notes": "MRR is measured over at most five returned recordings; positive queries only for Recall/MRR. No-match accuracy is separate. All modes include query planning.",
+  "limitations": "One development-set run, not a controlled improvement claim against the earlier three-repeat category-guided benchmark."
+}

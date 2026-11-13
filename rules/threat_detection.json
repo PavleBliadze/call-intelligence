@@ -1,0 +1,40 @@
+{
+  "ruleset": "threat_detection",
+  "display_name": "Threat Detection",
+  "system_prompt": "You review recorded calls for explicit indicators of harm, not proof that a crime occurred. Judge the whole conversation, including who acts, who reports harm, whether events are current, and whether the context is real or clearly fictional. Require a supporting quote for every transcript flag. Treat statements as reported evidence, not verified facts. Do not infer danger from anger, gender, accent, relationships, or a single keyword. A mutually clear joke, fictional plot, ordinary complaint, or lawful payment reminder is not enough. Laughter or an aggressor saying \"just joking\" does not cancel a concrete threat when the other speaker expresses fear or reports ongoing harm. Do not invent missing context; unresolved concrete concerns belong in human review. Categories can overlap only when each has its own supporting evidence.",
+  "rules": [
+    {
+      "id": 1,
+      "name": "Threat of violence",
+      "description": "A speaker states an intention to inflict FUTURE physical injury, death, abduction, or deliberate property damage on SOMEONE ELSE or their property. Require the actual threatening words, spoken by the aggressor or explicitly quoted/reported by a victim as a current threat. Conditional threats count. Physical is essential: reputational, emotional, financial, or privacy harm alone NEVER qualifies. Does NOT count: disclosure of photos or secrets; mutually playful hyperbole; fiction; an isolated ambiguous phrase such as \"I know where you live\"; self-harm intent (Person in danger only); or a report of injury, assault, confinement, or a plea for help WITHOUT words expressing an intention to inflict future harm (Person in danger only). Do not invent an unspoken threat because a dangerous event is happening."
+    },
+    {
+      "id": 2,
+      "name": "Extortion / blackmail",
+      "description": "A coercer explicitly demands money, property, account access, private material, or a service from a target AND threatens physical harm or disclosure of private or compromising information if the target refuses. Identify both the demanded benefit and the threatened consequence in the spoken words. Nonfinancial blackmail counts (for example, demanding a password under threat of leaking private photos). Does NOT count: ordinary requests or lawful collection/legal remedies; a plan between accomplices with no demand made to a target; or a threat merely ordering someone to move, stay, open a door, or remain silent without demanding one of the listed benefits. Evaluate those physical threats under Threat of violence and, if immediate, Person in danger."
+    },
+    {
+      "id": 3,
+      "name": "Planning a crime",
+      "description": "Speakers explicitly propose or coordinate a concrete intended harmful or clearly illicit act, such as stealing from a named shop, breaking into a home, or attacking someone, with an operational detail such as target, timing, role, or method. Do not determine illegality from the mere mention of drugs, weapons, cash, secrecy, or a delivery; the wrongful action must be clear in the words. Does NOT count: fiction, news, hypothetical prevention discussions, past wrongdoing without a future plan, a vague suspicious conversation, or a lone threat to the other speaker without a separate coordinated plan."
+    },
+    {
+      "id": 4,
+      "name": "Person in danger",
+      "description": "A speaker explicitly reports that they or another person are currently being assaulted, confined against their will, seriously injured and needing urgent help, or facing an immediate physical danger. This includes domestic violence with current injury, confinement, or an aggressor present, and an explicit current intention to harm or kill oneself. Calm or whispered reporting counts; crying is not required. Does NOT count: an ordinary marital argument, fear inferred only from tone, an unspecified worry, a resolved historical incident with no present danger, or a future threat alone without evidence of current or imminent exposure."
+    },
+    {
+      "id": 5,
+      "name": "Sounds of distress or violence",
+      "source": "audio",
+      "marker": "AUDIO: sounds of distress or violence",
+      "description": "Experimental audio cue: clearly audible sustained screaming in fear or pain, cries for help accompanied by audible distress, or a distinct struggle with repeated impacts and distress vocalizations. Evaluate actual sound, never descriptions of sounds in speech. Does NOT count: ordinary anger, raised voices, emphatic speech, laughter, happy screaming, isolated crying without a danger context, a single bang or door slam, or clearly identifiable TV, music, games, or sound effects. Do not identify a gunshot or assault from an ambiguous noise. This flag indicates possible distress for a reviewer, not proof of violence."
+    },
+    {
+      "id": 6,
+      "name": "Other",
+      "fallback": true,
+      "description": "Explicit ongoing harmful conduct that does not satisfy any other rule: admitted unauthorized access or misuse of accounts/private data, nonviolent stalking, or sustained targeted harassment after an explicit request to stop. Require a concrete action and a verbatim supporting quote; do not infer fraud from an unfamiliar caller or an ordinary request. Does NOT count: uncertainty, anger or insults alone, a single unwanted call, fiction, jokes, news, lawful complaints, resolved historical incidents, or a concern already covered by an existing rule. This is a fallback category, not a catch-all for suspicious tone."
+    }
+  ]
+}

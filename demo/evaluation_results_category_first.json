@@ -1,0 +1,57 @@
+{
+  "created_at": "2026-10-21T13:45:42.204209+00:00",
+  "models": {
+    "text": "gpt-5.4-mini",
+    "embedding": "text-embedding-3-small"
+  },
+  "embedding_dimensions": 1536,
+  "metrics": {
+    "vector": {
+      "queries": 9,
+      "recall_at_3": 1.0,
+      "mrr": 1.0,
+      "mean_latency_ms": 2166,
+      "median_latency_ms": 2388,
+      "no_match_accuracy": 0,
+      "errors": 0,
+      "degraded_requests": 0
+    },
+    "hybrid": {
+      "queries": 9,
+      "recall_at_3": 1.0,
+      "mrr": 0.9375,
+      "mean_latency_ms": 2126,
+      "median_latency_ms": 1685,
+      "no_match_accuracy": 0,
+      "errors": 0,
+      "degraded_requests": 0
+    },
+    "hybrid_reranked": {
+      "queries": 9,
+      "recall_at_3": 1.0,
+      "mrr": 1.0,
+      "mean_latency_ms": 4054,
+      "median_latency_ms": 3634,
+      "no_match_accuracy": 1,
+      "errors": 0,
+      "degraded_requests": 0
+    },
+    "keyword": {
+      "queries": 9,
+      "recall_at_3": 0.875,
+      "mrr": 0.8125,
+      "mean_latency_ms": 1673,
+      "median_latency_ms": 1567,
+      "no_match_accuracy": 0,
+      "errors": 0,
+      "degraded_requests": 0
+    }
+  },
+  "notes": "MRR is measured over at most five returned recordings; positive queries only for Recall/MRR. No-match accuracy is separate. All modes include query planning.",
+  "strategy": "category_first_evidence_fallback",
+  "searchable_recordings": 9,
+  "observations": 36,
+  "repeats": 1,
+  "broadened_requests": 0,
+  "limitations": "One development-set run; not a controlled accuracy comparison. Incorrect-route recovery is verified with offline tests, not observed naturally in this live run."
+}

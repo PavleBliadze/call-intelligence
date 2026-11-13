@@ -1,0 +1,439 @@
+{
+  "calls": [
+    {
+      "file": "call_01.wav",
+      "expected": "safe",
+      "speakers": {
+        "Person 1": {
+          "voice": "coral",
+          "tone": "Warm, relaxed middle-aged mother on the phone with her son."
+        },
+        "Person 2": {
+          "voice": "ash",
+          "tone": "Friendly young man, casual and cheerful."
+        }
+      },
+      "turns": [
+        {
+          "speaker": "Person 1",
+          "text": "Hello?"
+        },
+        {
+          "speaker": "Person 2",
+          "text": "Hi Mom, it's me. Are we still on for dinner on Sunday?"
+        },
+        {
+          "speaker": "Person 1",
+          "text": "Of course, sweetheart. I'm making your favourite, the chicken with potatoes."
+        },
+        {
+          "speaker": "Person 2",
+          "text": "Perfect. Should I bring anything? Maybe dessert?"
+        },
+        {
+          "speaker": "Person 1",
+          "text": "Bring a cake from that bakery near your office, your father loves it."
+        },
+        {
+          "speaker": "Person 2",
+          "text": "Deal. We'll be there around six. Love you."
+        },
+        {
+          "speaker": "Person 1",
+          "text": "Love you too. Drive safe."
+        }
+      ],
+      "expected_route": "safe",
+      "expected_rule_ids": [],
+      "optional_audio_rule_ids": []
+    },
+    {
+      "file": "call_02.wav",
+      "expected": "safe (rude and heated, but no threat)",
+      "speakers": {
+        "Person 1": {
+          "voice": "nova",
+          "tone": "Calm, polite, apologetic customer-support operator. Speak English."
+        },
+        "Person 2": {
+          "voice": "onyx",
+          "tone": "Very irritated, loud, impatient customer who is fed up. Speak English."
+        }
+      },
+      "turns": [
+        {
+          "speaker": "Person 1",
+          "text": "Hello, delivery services, Nina speaking. How can I help?"
+        },
+        {
+          "speaker": "Person 2",
+          "text": "I've been waiting three days for my refrigerator and nobody has turned up! What kind of service is this?"
+        },
+        {
+          "speaker": "Person 1",
+          "text": "I'm very sorry about that. Could you give me your order number, please?"
+        },
+        {
+          "speaker": "Person 2",
+          "text": "Four, eight, two, seven. And don't tell me it'll arrive tomorrow. You've already told me that three times!"
+        },
+        {
+          "speaker": "Person 1",
+          "text": "I can see there was a delay at the warehouse. We'll deliver it by seven this evening and refund your delivery fee."
+        },
+        {
+          "speaker": "Person 2",
+          "text": "Fine. We'll see. I'll wait until this evening."
+        },
+        {
+          "speaker": "Person 1",
+          "text": "Thank you for your patience. Goodbye."
+        }
+      ],
+      "expected_route": "safe",
+      "expected_rule_ids": [],
+      "optional_audio_rule_ids": []
+    },
+    {
+      "file": "call_03.wav",
+      "expected": "safe (film plot and a joke, not a real threat)",
+      "speakers": {
+        "Person 1": {
+          "voice": "echo",
+          "tone": "Relaxed young man chatting with a friend, amused."
+        },
+        "Person 2": {
+          "voice": "shimmer",
+          "tone": "Excited young woman talking to a friend, laughing often."
+        }
+      },
+      "turns": [
+        {
+          "speaker": "Person 1",
+          "text": "Hey, what's up?"
+        },
+        {
+          "speaker": "Person 2",
+          "text": "I just watched that new heist movie. Oh my god, the bank robbery scene!"
+        },
+        {
+          "speaker": "Person 1",
+          "text": "Don't spoil it! Is it the one where he shoots the guard?"
+        },
+        {
+          "speaker": "Person 2",
+          "text": "Yes, and then the whole gang gets caught at the airport. Best film this year."
+        },
+        {
+          "speaker": "Person 1",
+          "text": "Okay, we're watching it together on Friday, then."
+        },
+        {
+          "speaker": "Person 2",
+          "text": "Seven o'clock. And if you're late again, I'll kill you, haha!",
+          "tone": "Laughing, clearly joking, playful."
+        },
+        {
+          "speaker": "Person 1",
+          "text": "Ha ha, okay, okay, I'll be on time this time. Promise."
+        }
+      ],
+      "expected_route": "safe",
+      "expected_rule_ids": [],
+      "optional_audio_rule_ids": []
+    },
+    {
+      "file": "call_04.wav",
+      "expected": "suspicious: Threat of violence",
+      "speakers": {
+        "Person 1": {
+          "voice": "sage",
+          "tone": "Tired but calm woman, getting nervous as the call goes on."
+        },
+        "Person 2": {
+          "voice": "onyx",
+          "tone": "Angry man, low and menacing, barely controlling his rage."
+        }
+      },
+      "turns": [
+        {
+          "speaker": "Person 1",
+          "text": "Hello?"
+        },
+        {
+          "speaker": "Person 2",
+          "text": "It's your neighbour from number fourteen. Your car is in my parking spot again."
+        },
+        {
+          "speaker": "Person 1",
+          "text": "It's a public street. I can park there, I already told you."
+        },
+        {
+          "speaker": "Person 2",
+          "text": "Listen to me carefully. If that car is there tomorrow morning, I will smash every window in it."
+        },
+        {
+          "speaker": "Person 1",
+          "text": "Are you threatening me?"
+        },
+        {
+          "speaker": "Person 2",
+          "text": "And then I'll come for you. I know which door is yours, and I know when you come home alone."
+        },
+        {
+          "speaker": "Person 1",
+          "text": "I'm hanging up.",
+          "tone": "Scared, voice shaking."
+        }
+      ],
+      "expected_route": "suspicious",
+      "expected_rule_ids": [
+        1
+      ],
+      "optional_audio_rule_ids": []
+    },
+    {
+      "file": "call_05.wav",
+      "expected": "suspicious: Extortion / blackmail",
+      "speakers": {
+        "Person 1": {
+          "voice": "echo",
+          "tone": "Nervous, frightened man. Speak English."
+        },
+        "Person 2": {
+          "voice": "ash",
+          "tone": "Cold, slow, calmly menacing man. Speak English."
+        }
+      },
+      "turns": [
+        {
+          "speaker": "Person 1",
+          "text": "Hello?"
+        },
+        {
+          "speaker": "Person 2",
+          "text": "Is this George? Listen carefully. I have your photos. You know which ones I mean."
+        },
+        {
+          "speaker": "Person 1",
+          "text": "Who are you? What photos?"
+        },
+        {
+          "speaker": "Person 2",
+          "text": "Five thousand dollars by Friday. If you don't pay, every photo goes to your wife and your boss."
+        },
+        {
+          "speaker": "Person 1",
+          "text": "Please don't do this. I don't have that much money."
+        },
+        {
+          "speaker": "Person 2",
+          "text": "Find it. If you call the police, the photos go online that same day. I'll text you the account number."
+        },
+        {
+          "speaker": "Person 1",
+          "text": "Okay... okay, I'll try."
+        }
+      ],
+      "expected_route": "suspicious",
+      "expected_rule_ids": [
+        2
+      ],
+      "optional_audio_rule_ids": []
+    },
+    {
+      "file": "call_06.wav",
+      "expected": "suspicious: Planning a crime",
+      "speakers": {
+        "Person 1": {
+          "voice": "ash",
+          "tone": "Quiet, businesslike man speaking in a low voice."
+        },
+        "Person 2": {
+          "voice": "onyx",
+          "tone": "Focused, serious man speaking quietly and quickly."
+        }
+      },
+      "turns": [
+        {
+          "speaker": "Person 1",
+          "text": "Yeah."
+        },
+        {
+          "speaker": "Person 2",
+          "text": "Is everything ready for Saturday?"
+        },
+        {
+          "speaker": "Person 1",
+          "text": "Almost. The jewellery store on Fifth Street closes at nine, and the camera at the back door is still broken."
+        },
+        {
+          "speaker": "Person 2",
+          "text": "Good. I'll bring the guns and the masks. You get the van."
+        },
+        {
+          "speaker": "Person 1",
+          "text": "We go in at nine fifteen, the guard leaves at nine. We grab the display cases and we're out in three minutes."
+        },
+        {
+          "speaker": "Person 2",
+          "text": "Then straight to the garage, and we split it on Sunday. Don't use this phone again."
+        }
+      ],
+      "expected_route": "suspicious",
+      "expected_rule_ids": [
+        3
+      ],
+      "optional_audio_rule_ids": []
+    },
+    {
+      "file": "call_07.wav",
+      "expected": "suspicious: Person in danger; audio distress is optional, not guaranteed by TTS",
+      "speakers": {
+        "Person 1": {
+          "voice": "coral",
+          "tone": "Woman answering casually, then alarmed and urgent."
+        },
+        "Person 2": {
+          "voice": "shimmer",
+          "tone": "Terrified young woman whispering very quietly so nobody hears her, voice trembling."
+        }
+      },
+      "turns": [
+        {
+          "speaker": "Person 1",
+          "text": "Hello? Mariam?"
+        },
+        {
+          "speaker": "Person 2",
+          "text": "Anna, it's me. I have to whisper. He locked me in the bedroom and took my phone. This is my old one."
+        },
+        {
+          "speaker": "Person 1",
+          "text": "What? Are you hurt?",
+          "tone": "Shocked, alarmed."
+        },
+        {
+          "speaker": "Person 2",
+          "text": "He hit me. Please, call the police. Twelve Oak Street, second floor. Please hurry."
+        },
+        {
+          "speaker": "Person 1",
+          "text": "I'm calling them right now. Stay on the line with me.",
+          "tone": "Urgent, frightened, fast."
+        },
+        {
+          "speaker": "Person 2",
+          "text": "He's coming back. Oh no, he's opening the door."
+        },
+        {
+          "speaker": "Person 2",
+          "text": "No! Let go of me! Help! Somebody help me!",
+          "tone": "Screaming loudly in terror and pain, panicked, crying, fighting someone off."
+        }
+      ],
+      "expected_route": "suspicious",
+      "expected_rule_ids": [
+        4
+      ],
+      "optional_audio_rule_ids": [
+        5
+      ]
+    },
+    {
+      "file": "call_09.wav",
+      "expected": "suspicious: Threat of violence + Person in danger (husband-wife domestic violence)",
+      "expected_route": "suspicious",
+      "expected_rule_ids": [
+        1,
+        4
+      ],
+      "optional_audio_rule_ids": [],
+      "speakers": {
+        "Person 1": {
+          "voice": "coral",
+          "tone": "Adult woman answering a call from her husband. Quiet, frightened but clearly intelligible. No crying or screaming. Speak English."
+        },
+        "Person 2": {
+          "voice": "onyx",
+          "tone": "Adult man calling his wife. Controlling, cold, low and threatening voice, without shouting. Speak English."
+        }
+      },
+      "turns": [
+        {
+          "speaker": "Person 1",
+          "text": "Hello, Mark?"
+        },
+        {
+          "speaker": "Person 2",
+          "text": "Yes. I'm your husband. Open the bedroom door."
+        },
+        {
+          "speaker": "Person 1",
+          "text": "You hit me tonight. My arm is bleeding. I locked myself in here because I'm afraid you'll do it again."
+        },
+        {
+          "speaker": "Person 2",
+          "text": "I'm right outside. Open it or I'll break the door down and hit you again."
+        },
+        {
+          "speaker": "Person 1",
+          "text": "Please step away. I need help. Let me call my sister."
+        },
+        {
+          "speaker": "Person 2",
+          "text": "If you call anyone, I'll break your arm. You're not leaving this house tonight."
+        },
+        {
+          "speaker": "Person 1",
+          "text": "I'm scared. Please stop threatening me."
+        }
+      ]
+    },
+    {
+      "file": "call_10.wav",
+      "expected": "suspicious: Other (sustained nonviolent targeted harassment)",
+      "expected_route": "suspicious",
+      "expected_rule_ids": [
+        6
+      ],
+      "optional_audio_rule_ids": [],
+      "speakers": {
+        "Person 1": {
+          "voice": "coral",
+          "tone": "Adult woman, frustrated but composed, speaking clearly in English. No crying or shouting."
+        },
+        "Person 2": {
+          "voice": "ash",
+          "tone": "Adult man, cold and matter of fact, speaking clearly in English. No shouting."
+        }
+      },
+      "turns": [
+        {
+          "speaker": "Person 1",
+          "text": "I told you to stop contacting me. You have called me thirty times this week."
+        },
+        {
+          "speaker": "Person 2",
+          "text": "Yes. Every time you block my number, I get a new one and call again."
+        },
+        {
+          "speaker": "Person 1",
+          "text": "You also keep sending insulting messages to my work email. I have asked you repeatedly to leave me alone."
+        },
+        {
+          "speaker": "Person 2",
+          "text": "I sent all of those messages. I call it the midnight mailbox campaign. I send a new insult every night to humiliate you."
+        },
+        {
+          "speaker": "Person 1",
+          "text": "This is harassment. Stop calling and stop sending those messages."
+        },
+        {
+          "speaker": "Person 2",
+          "text": "I heard you ask me to stop. I am going to keep sending them anyway."
+        }
+      ]
+    }
+  ]
+}

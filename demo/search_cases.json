@@ -1,0 +1,11 @@
+[
+  {"name":"blackmail", "query":"Someone threatens to share private photos unless paid", "relevant":["call_05.wav"]},
+  {"name":"spouses", "query":"A husband threatens his wife", "relevant":["call_09.wav"]},
+  {"name":"robbery", "query":"A robbery involving a van", "relevant":["call_06.wav"]},
+  {"name":"anger_without_threats", "query":"An angry customer without threats", "relevant":["call_02.wav"]},
+  {"name":"fiction", "query":"A conversation about a violent movie", "relevant":["call_03.wav"]},
+  {"name":"distinctive_harassment", "query":"Who mentions the midnight mailbox campaign?", "relevant":["call_10.wav"]},
+  {"name":"no_match", "query":"Find a call arranging a scuba-diving holiday in the Maldives", "relevant":[]},
+  {"name":"followup_spouses", "query":"Only between spouses", "history":[{"role":"user","content":"Find recordings involving threats of violence"}], "references":["call_04.wav","call_09.wav"], "relevant":["call_09.wav"]},
+  {"name":"followup_threat", "query":"What did he threaten?", "history":[{"role":"user","content":"Find a husband threatening his wife"},{"role":"assistant","content":"call_09.wav contains a conversation between spouses."}], "references":["call_09.wav"], "relevant":["call_09.wav"]}
+]

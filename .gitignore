@@ -1,0 +1,18 @@
+# Virtual environments
+venv/
+.venv/
+
+# Secrets
+.env
+
+# Call recordings and derived/output folders - never commit them
+calls/
+safe/
+suspicious/
+debug/
+data/
+
+# Run artifacts
+run.log
+__pycache__/
+*.pyc
